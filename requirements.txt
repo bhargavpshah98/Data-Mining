@@ -3,3 +3,5 @@ numpy
 joblib
 scikit-learn
 pandas
+google-cloud-bigquery
+db-dtypes
