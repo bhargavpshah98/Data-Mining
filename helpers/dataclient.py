@@ -35,8 +35,7 @@ def print_data_zillow_property_price(project_id="dataminingproject-364904"):
             SELECT
                 *
             FROM
-                `dataminingproject-364904.zillow_property_value.ZillowPropertyValue`
-            LIMIT 1000
+                `dataminingproject-364904.zillow_property_value.ZillowRentProcessed`
             """
     dfquery = client.query(sql)
     df_crimedata=dfquery.to_dataframe()

@@ -3,5 +3,14 @@ numpy
 joblib
 scikit-learn
 pandas
-google-cloud-bigquery
+google-cloud-bigquery>=1.17.0
 db-dtypes
+google-cloud-bigquery-storage>=0.7.0
+pandas-gbq>=0.10.0
+kaleido
+poppler-utils 
+pdf2image
+plotly-geo
+geopandas
+pyshp
+shapely
