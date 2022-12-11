@@ -40,3 +40,21 @@ def print_data_zillow_property_price(project_id="dataminingproject-364904"):
     dfquery = client.query(sql)
     df_crimedata=dfquery.to_dataframe()
     return df_crimedata
+def print_data_classified(project_id="dataminingproject-364904"):
+# https://cloud.google.com/resource-manager/docs/creating-managing-projects
+    client = bigquery.Client(credentials=credentials,project=project_id)
+
+    #Print your current data
+    for dataset in client.list_datasets():
+        print(dataset.dataset_id)
+    sql = """
+            SELECT
+                *
+            FROM
+                `dataminingproject-364904.zillow_property_value.DataClassified` DC,
+                (SELECT State,County,state_fips_code,county_fips_code FROM `dataminingproject-364904.zillow_property_value.ZillowRentProcessed` GROUP BY State,County,state_fips_code,county_fips_code) as codes
+            WHERE DC.State=codes.State AND DC.County=codes.County
+            """
+    dfquery = client.query(sql)
+    df_final=dfquery.to_dataframe()
+    return df_final
