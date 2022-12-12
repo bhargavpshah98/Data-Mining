@@ -15,4 +15,9 @@ plotly-geo
 geopandas
 pyshp
 shapely
+IPython
+plotnine
+lets_plot
+IPython
 plotly
+

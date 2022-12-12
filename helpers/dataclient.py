@@ -40,6 +40,7 @@ def print_data_zillow_property_price(project_id="dataminingproject-364904"):
     dfquery = client.query(sql)
     df_crimedata=dfquery.to_dataframe()
     return df_crimedata
+
 def print_data_classified(project_id="dataminingproject-364904"):
 # https://cloud.google.com/resource-manager/docs/creating-managing-projects
     client = bigquery.Client(credentials=credentials,project=project_id)
