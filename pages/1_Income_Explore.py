@@ -23,4 +23,4 @@ st.write(mean_US)
 
 #US MAP PLOTTING FOR MEAN INCOME
 state_gcoder = geocode_states("US-48")
-(ggplot() + geom_map(map=state_gcoder) + geom_point(aes("Lon", "Lat", color="Mean"), data=income_dat, size=1))
+ggplot() + geom_map(map=state_gcoder) + geom_point(aes("Lon", "Lat", color="Mean"), data=income_dat, size=1)
