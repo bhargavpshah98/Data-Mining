@@ -24,12 +24,30 @@ st.write(mean_US)
 
 #US MAP PLOTTING FOR MEAN INCOME
 
-# Create the plot using ggplot
-state_gcoder = geocode_states("US-48")
-p = ggplot() + geom_map(map=state_gcoder) + geom_point(aes("Lon", "Lat", color="Mean"), data=income_dat, size=1)
 
-# Save the plot to a file in a specific location using ggsave
-loc = ggsave(plot=p, filename="../../Data-Mining/datasets/plot.html")
-st.pyplot(loc)
-# Display the plot using st.pyplot
-# st.write("../../Data-Mining/datasets/plot.html")
+state_gcoder = geocode_states("US-48")
+income_dat["lat"] = income_dat["Lat"]
+income_dat["lon"] = income_dat["Lon"]
+st.map(income_dat)
+
+# Better Scattering
+fill_PiYG= scale_fill_gradient2(name="Mean income", 
+                                low="#8e0152",mid="#f7f7f7",high="#276419", 
+                                midpoint=mean_US)
+color_PiYG = scale_color_gradient2(name="Mean income", 
+                                   low="#8e0152",mid="#f7f7f7",high="#276419", 
+                                   midpoint=mean_US)
+
+# Define some setting to use on plots later on:
+# - Remove axis.
+# - Define plot coordinate system and size.
+map_settings = (theme(axis="blank", panel_grid="blank") +
+                coord_fixed(1.27) +
+                ggsize(785, 350))
+
+# Customize the tooltip.
+tooltip_scatter=(layer_tooltips()
+    .format('Mean', '.2s')
+    .line("Mean income|$@Mean"))
+
+st.map(income_dat,10)
