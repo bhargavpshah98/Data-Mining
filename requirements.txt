@@ -10,7 +10,9 @@ pandas-gbq>=0.10.0
 kaleido
 poppler-utils 
 pdf2image
+plotly
 plotly-geo
 geopandas
 pyshp
 shapely
+plotly
