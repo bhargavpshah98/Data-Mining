@@ -14,5 +14,10 @@ plotly-geo
 geopandas
 pyshp
 shapely
+<<<<<<< Updated upstream
 IPython
 plotnine
+=======
+lets_plot
+IPython
+>>>>>>> Stashed changes
