@@ -65,11 +65,15 @@ if submit:
             df_inf[feature] = label.transform(df_inf[feature])
             
     st.write(df_inf)
-
+    
     # Load the logistic regression model from the pickle file
     with open("./models/predictbasic/model.pkl", "rb") as file:
         model = pickle.load(file)
-
+        # Load the logistic regression model from the pickle file
+    with open("./models/predictbasic/scaler.pkl", "rb") as file:
+        scaler = pickle.load(file)
+    X_test = pd.DataFrame(scaler.transform(df_inf), columns = df_inf.columns)
     # Make predictions using the model
-    predictions = model.predict(df_inf)
+    predictions = model.predict(X_test)
+    print(predictions)
     st.write('prediction',predictions[0])
