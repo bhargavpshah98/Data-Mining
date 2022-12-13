@@ -20,4 +20,4 @@ plotnine
 lets_plot
 IPython
 plotly
-
+streamlit_letsplot
