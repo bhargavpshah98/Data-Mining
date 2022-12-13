@@ -10,6 +10,14 @@
 
 ```streamlit run Main.py```
 
+## Secrets
+
+setup secrets for the project for streamlit
+https://docs.streamlit.io/knowledge-base/tutorials/databases/bigquery
+
+Colabs:
+colabs folder contains all the colabs needed for setup of the data
+
 ##Few screenshots of the project
 
 
